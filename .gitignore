@@ -1,0 +1,9 @@
+# Ignore all node_modules folders (any depth)
+node_modules/
+
+# Optional (recommended for React/Node projects)
+dist/
+build/
+.env
+*.log
+.DS_Store
