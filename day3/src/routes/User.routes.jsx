@@ -4,6 +4,7 @@ import { lazy } from "react";
 import UserAdd from "../pages/User/UserAdd";
 import UserDelete from "../pages/User/UserDelete";
 import UserUpdate from "../pages/User/UserUpdate";
+import ProtectedRoute from "../components/auth/ProtectedRoute";
 
 // ✅ Lazy load heavy component (code splitting)
 // This will load ONLY when user visits `/user-list`
@@ -35,7 +36,12 @@ const UserRoutes = [
   },
   {
     path: "user-list",
-    element: <UserList />, // Lazy loaded → improves performance
+    element: 
+    <ProtectedRoute>
+      <UserList /> {/* this is childen*/}
+    </ProtectedRoute>
+    
+    , // Lazy loaded → improves performance
   },
   {
     path: "user-delete",

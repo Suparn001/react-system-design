@@ -4,6 +4,7 @@ import { Suspense } from 'react'; // ✅ Required for lazy loading
 import Header from './components/Header';
 import AuthRoutes from './routes/Auth.routes';
 import UserRoutes from './routes/User.routes';
+import OtherRoutes from './routes/OtherRoutes';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
   */
   const allRoutes = [
     ...AuthRoutes,
-    ...UserRoutes
+    ...UserRoutes,
+    ...OtherRoutes
   ];
 
   return (
