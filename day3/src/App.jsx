@@ -68,8 +68,16 @@ function App() {
       {/* or */}
 
       <Suspense fallback={<div>Loading...</div>}>
+        {/* 
+          Suspense is used to handle lazy-loaded components.
+          When a component is being loaded (via React.lazy),
+          this fallback UI (Loading...) is shown until the component is ready.
+
+          It improves performance by enabling code splitting
+          and enhances user experience by showing a loader instead of a blank screen.
+        */}
         <Routes>
-          {allRoutes.map((item, index) => (
+          {allRoutes.map((item) => (
             <Route key={item.path} {...item} />
           ))}
         </Routes>
